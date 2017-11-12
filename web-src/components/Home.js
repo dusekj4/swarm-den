@@ -84,7 +84,7 @@ export class Services extends React.Component {
       <div className={styles.infoComponent}>
         <Table celled>
           <Table.Body>
-            {filteredServices.map(service => 
+            {services.map(service => 
             (<Table.Row key={dotProp.get(service, 'Spec.Name') || ''}>
               <Table.Cell
                 className={styles.pointer}
