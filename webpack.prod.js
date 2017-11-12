@@ -1,5 +1,6 @@
 var app_root = 'web-src'; 
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   app_root: app_root,
@@ -38,5 +39,11 @@ module.exports = {
         }
       }
     ],
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+  })]
 };
