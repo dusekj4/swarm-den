@@ -2,14 +2,17 @@ const docker = require('./src/docker'),
       express = require('express'),
       basicAuth = require('express-basic-auth')
       app = express()
-      path = require('path');
+      path = require('path'),
+      user = process.env.user,
+      pass = process.env.pass;
 
-app.use(basicAuth({
-    users: { 'admin': 'supersecret' },
+if(user && pass) {
+  app.use(basicAuth({
+    users: {user: pass},
     challenge: true,
     realm: 'SD915246'
-}))
-
+  }))
+}
 app.use(express.static('public'));
 
 app.get('/services', (req, res) => 

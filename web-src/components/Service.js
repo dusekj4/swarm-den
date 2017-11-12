@@ -6,7 +6,7 @@ import {loadServiceAction} from '../actions/services.actions';
 import {Header, Table, Icon, Menu, Grid, Input, Button, Dropdown, Checkbox} from 'semantic-ui-react';
 import dotProp from 'dot-prop';
 import moment from 'moment';
-import styles from './app.css';
+import styles from './App.css';
 
 const dateFormat = 'MM/DD/YYYY hh:mmA';
 

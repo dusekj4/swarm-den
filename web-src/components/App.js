@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Dimmer, Loader} from 'semantic-ui-react'
-import styles from './app.css';
+import styles from './App.css';
 
 export class App extends React.Component {
 
