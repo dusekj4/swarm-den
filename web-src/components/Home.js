@@ -42,7 +42,7 @@ export class Services extends React.Component {
 
   filterOfflineServices() {
     return this.props.services.filter(service =>
-     service.runninasks === 0) 
+      service.runningTasks === 0) 
   }
 
   render() {
