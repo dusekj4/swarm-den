@@ -8,7 +8,7 @@ const docker = require('./src/docker'),
 
 if(user && pass) {
   app.use(basicAuth({
-    users: {user: pass},
+    users: {[user]: [pass]},
     challenge: true,
     realm: 'SD915246'
   }))
