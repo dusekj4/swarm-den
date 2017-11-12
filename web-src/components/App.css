@@ -1,0 +1,11 @@
+.infoComponent {
+    margin-left: 220px !important;
+}
+
+.pointer:hover {
+    cursor: pointer;
+}
+
+.fixed {
+    position: fixed !important;
+}
