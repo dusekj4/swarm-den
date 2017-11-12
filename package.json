@@ -8,7 +8,7 @@
     "dev": "nodemon server.js",
     "start": "node server.js",
     "web-dev": "webpack --watch",
-    "build-prod": "webpack -p --config webpack.prod.config.js"
+    "build-prod": "webpack --optimize-minimize"
   },
   "author": "",
   "license": "ISC",

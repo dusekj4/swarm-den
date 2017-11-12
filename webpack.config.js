@@ -18,7 +18,10 @@ module.exports = {
       {
         test: /\.js$/,
         loaders: ['react-hot', 'babel'],
-        exclude: /node_modules/,
+        include: [
+          path.join(__dirname, 'web-src'),
+          path.join(__dirname, 'node_modules/dot-prop')
+        ]
       },
       {
         test: /\.scss$/,
