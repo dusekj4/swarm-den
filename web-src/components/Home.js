@@ -32,11 +32,11 @@ export class Services extends React.Component {
 
   onSearchChange({value}) {this.setState({search: value})}
 
-  filterServices() {
+  filterServices(services) {
     return this.state.searchBy === 'Search by Service' ?
-      this.props.services.filter(service =>
+      services.filter(service =>
         service.Spec.Name.includes(this.state.search)) :
-      this.props.services.filter(service =>
+      services.filter(service =>
         service.Spec.TaskTemplate.ContainerSpec.Image.includes(this.state.search))
   }
 
@@ -46,12 +46,12 @@ export class Services extends React.Component {
   }
 
   render() {
-    let filteredServices = this.state.showOffline ?
+    let services = this.state.showOffline ?
       this.filterOfflineServices():
       this.props.services;
 
     if(this.state.search !== '') {
-      filteredServices = this.filterServices();
+      filteredServices = this.filterServices(services);
     }
 
     return (
