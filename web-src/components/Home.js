@@ -51,7 +51,7 @@ export class Services extends React.Component {
       this.props.services;
 
     if(this.state.search !== '') {
-      filteredServices = this.filterServices(services);
+      services = this.filterServices(services);
     }
 
     return (
