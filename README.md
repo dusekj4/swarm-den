@@ -8,7 +8,7 @@ docker service create \
    -p 8089:8089 \
    --name swarm-den \
    --mount "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock" \
-   --constraint 'node.role==manager' jdusek/swarm-den:0.1
+   --constraint 'node.role==manager' jdusek/swarm-den:0.2
 ```
 
 if you need some kind of authorization you can set user and pass env
@@ -19,5 +19,5 @@ docker service create \
    --env pass=yourpassword \
    --name swarm-den \
    --mount "type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock" \
-   --constraint 'node.role==manager' jdusek/swarm-den:0.1
+   --constraint 'node.role==manager' jdusek/swarm-den:0.2
 ```

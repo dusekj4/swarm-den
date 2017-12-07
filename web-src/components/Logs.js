@@ -16,7 +16,7 @@ export class Service extends React.Component {
 
     this.state = {
       timestamps: true,
-      tail: 150,
+      tail: 50,
       reverseOrder: false,
       search: ''
     };
