@@ -45,6 +45,18 @@ app.get('/get-nodes', (req, res) =>
   })
 );
 
+app.get('/get-logs/:serviceId/:tail/:timestamp/:html', (req, res) => {
+    const {serviceId, timestamp, tail, html} = req.params;
+    docker.getLogs(serviceId, timestamp, tail, html)
+      .then(logs => res.send(logs))
+      .catch(error => {
+        console.log(error);
+        res.statusCode = 500;
+        res.send('Error found, try again later')
+    })
+  }
+);
+
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '.', 'public', 'index.html'));
 });

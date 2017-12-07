@@ -1,5 +1,6 @@
 .infoComponent {
     margin-left: 220px !important;
+    color: white;
 }
 
 .pointer:hover {
@@ -8,4 +9,8 @@
 
 .fixed {
     position: fixed !important;
+}
+
+.menuInput {
+    max-width: 100px;
 }

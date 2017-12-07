@@ -1,7 +1,11 @@
 const rp = require('request-promise');
 const args = process.argv.slice(2);
 const dockerUrl = args[0] ? args[0] : 'http://unix:/var/run/docker.sock:';
+const Convert = require('ansi-to-html');
+const convert = new Convert();
 console.log(`Docker url is set: ${dockerUrl}`);
+
+convert.opts.newline = true;
 
 const headers = {
     'User-Agent': 'request',
@@ -38,8 +42,19 @@ const getNodes = async() => {
     return JSON.parse(nodesResult);
 } 
 
+const getLogs = async(serviceId, timestamp, tail, html) => {
+    const timestamps = timestamp === 'true' ? 1 : 0;
+    const logsResult = await rp(
+    {
+      uri: `${dockerUrl}/services/${serviceId}/logs?stderr=1&stdout=1&timestamps=${timestamps}&tail=${tail}`,
+      headers
+    });
+    return html === 'true' ? convert.toHtml(logsResult) : logsResult;
+} 
+
 module.exports = {
     getServices:getServices,
     getService:getService,
-    getNodes:getNodes
+    getNodes:getNodes,
+    getLogs:getLogs
 }

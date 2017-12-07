@@ -96,6 +96,11 @@ export class Services extends React.Component {
                 negative={!service.runningTasks}
               >{service.runningTasks >= 1 ? `Online: ${service.runningTasks}` : 'Offline'}
               </Table.Cell>
+              <Table.Cell
+                className={styles.pointer}
+                onClick={() => this.props.router.push(`/logs/${dotProp.get(service, 'Spec.Name') || ''}`)}>
+                Logs               
+              </Table.Cell>
               <Table.Cell>
                 <div>Created : {moment(service.CreatedAt).format(dateFormat)}</div>
                 <div>Updated: {moment(service.UpdatedAt).format(dateFormat)}</div>
