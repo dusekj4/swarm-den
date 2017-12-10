@@ -45,7 +45,7 @@ export class Nodes extends React.Component {
               </Table.Cell>
               <Table.Cell>
                 {`${dotProp.get(node, 'Spec.Role') || ''}${
-                  dotProp.get(node, 'ManagerStatus.Leader') && `(leader)`
+                  dotProp.get(node, 'ManagerStatus.Leader') ? `(leader)` : '' 
                 }`}
               </Table.Cell>
               <Table.Cell>
