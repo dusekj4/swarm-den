@@ -107,7 +107,7 @@ export class Service extends React.Component {
         <Menu.Item>
           <Input icon='search' onChange={(e, {value}) => this.setState({search: value})} placeholder='Search...' />
         </Menu.Item>
-        <Menu.Item header>Download</Menu.Item>
+        {/*<Menu.Item header>Download</Menu.Item>
         <Dropdown text={`Get ${this.state.exportType} logs`} item>
           <Dropdown.Menu >
             <Dropdown.Item onClick={() =>
@@ -127,7 +127,7 @@ export class Service extends React.Component {
               <div><Icon name='save' /> Download</div>
             }
           </Menu.Item>
-        }
+        }*/}
       </Menu>
       <div className={styles.infoComponent}>
         <div>
